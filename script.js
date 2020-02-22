@@ -1,6 +1,6 @@
 
 
-// Assignment Code
+// variables
 var generateBtn = document.querySelector("#generate");
 var lowerCaseValue;
 var upperCaseValue;
@@ -8,6 +8,7 @@ var numberCaseValue;
 var specialCharValue;
 var passLengthValue;
 
+//writes the password into the text box on browser
 function writePassword() {
 
   var password = generatePassword();
@@ -16,13 +17,14 @@ function writePassword() {
 
 }
 
+//generates a password with specified criteria that is chosen by the user
 function generatePassword() {
   var passLength = prompt("How many letters do you want in your password? (8-128)");
   var lowerCase = confirm("Do you want to include lowercase letters?");
   var upperCase = confirm("Do you want to include uppercase letters?");
   var numberCase = confirm("Do you want to include numbers?");
   var specialChar = confirm("Do you want to include special characters?");
-
+  //what is wanted in the final password
   var passCriteria = [];
 
   //number of characters wanted
@@ -33,8 +35,7 @@ function generatePassword() {
     alert("Please enter a valid number!")
   }
 
-
-  //lowercase letters
+  //if lowercase letters are wanted this then pushes them into the password criteria
     if (lowerCase===true) {
       lowerCaseValue = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
@@ -43,7 +44,7 @@ function generatePassword() {
         }
     }
 
-  //uppercase letters
+  //if uppercase letter are wanted this pushes them to password criteria
     if (upperCase===true) {
       upperCaseValue = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 
@@ -52,7 +53,7 @@ function generatePassword() {
       }
     }
 
-  //numbers 
+  //if numbers are wanted this pushes them to password criteria
     if (numberCase===true) {
       numberCaseValue = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 
@@ -61,7 +62,7 @@ function generatePassword() {
       }
     }
 
-  //special characters 
+  //if special characters are wanted this pushes them to password criteria
     if (specialChar===true) {
       specialCharValue = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "-", "+", "=", "{", "[", "}", "]", ":", ";", "'", "<", ">", "?", "/", "`", "~"];
 
@@ -69,6 +70,8 @@ function generatePassword() {
         passCriteria.push(specialCharValue[i]);
       }
     }
+    
+    //Randomly takes values from the password criteria and add it to the new password
 
     var newPassword = ""
 
@@ -81,7 +84,7 @@ function generatePassword() {
 }
 
 
-// Add event listener to generate button
+// Add event listener to activate the function when the button is clicked
 generateBtn.addEventListener("click", () => {
   writePassword;
 });
