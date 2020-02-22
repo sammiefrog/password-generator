@@ -16,38 +16,33 @@ function generatePassword() {
   var numberOfLetters = prompt("How many letters do you want in your password? (1-28)");
   var lowerCase = confirm("Do you want to include lowercase letters?")
   var upperCase = confirm("Do you want to include uppercase letters?")
-  var numberEls = confirm("Do you want to include numbers?")
+  var numberCase = confirm("Do you want to include numbers?")
   var specialChar = confirm("Do you want ot include special characters?")
 
-  function passLength() {
+  
     if (numberOfLetters >= 8 && numberOfLetters <= 128) {
-      alert("Thank You!")
+      numberOfLettersValue = parseInt(numberOfLetters);
     }
     else {
       alert("Please enter a valid number!")
     }
-  }
+  
+    if (lowerCase===true) {
+      lowerCaseValue = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+    }
 
-    // Functions, CharCode (http://net-comber.com/charset.html)
-  function lowerCaseFunc (){
-      return string.fromCharCode(Math.floor(Math.random() * 26) + 97);
-      }
-  console.log(lowerCaseFunc()); 
+    if (upperCase===true) {
+      upperCaseValue = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+    }
 
-  function upperCaseFunc (){
-      return string.fromCharCode(Math.floor(Math.random() * 26) + 65);
-      }
-  console.log(upperCaseFunc()); 
+    if (numberCase===true) {
+      numberCaseValue = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+    }
 
-  function numberElsFunc (){
-      return string.fromCharCode(Math.floor(Math.random() * 10) + 48);
-      }
-  console.log(numberElsFunc()); 
+    if (specialChar===true) {
+      specialCharValue = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "-", "+", "=", "{", "[", "}", "]", ":", ";", "'", "<", ">", "?", "/", "`", "~"];
+    }
 
-  function specialCharFunc (){
-      return string.fromCharCode(Math.floor(Math.random() * 15) + 33);
-      }
-  console.log(specialCharFunc());
 
 }
 
