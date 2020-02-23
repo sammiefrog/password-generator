@@ -20,19 +20,21 @@ function writePassword() {
 //generates a password with specified criteria that is chosen by the user
 function generatePassword() {
   var passLength = prompt("How many letters do you want in your password? (8-128)");
-  var lowerCase = confirm("Do you want to include lowercase letters?");
-  var upperCase = confirm("Do you want to include uppercase letters?");
-  var numberCase = confirm("Do you want to include numbers?");
-  var specialChar = confirm("Do you want to include special characters?");
+
   //what is wanted in the final password
   var passCriteria = [];
 
   //number of characters wanted
   if (passLength >= 8 && passLength <= 128) {
     passLengthValue = parseInt(passLength);
+    
+    var lowerCase = confirm("Do you want to include lowercase letters?");
+    var upperCase = confirm("Do you want to include uppercase letters?");
+    var numberCase = confirm("Do you want to include numbers?");
+    var specialChar = confirm("Do you want to include special characters?");
   }
   else {
-    alert("Please enter a valid number!")
+    alert("Please enter a valid number between 8 and 128!");
   }
 
   //if lowercase letters are wanted this then pushes them into the password criteria
@@ -70,7 +72,7 @@ function generatePassword() {
         passCriteria.push(specialCharValue[i]);
       }
     }
-    
+
     //Randomly takes values from the password criteria and add it to the new password
 
     var newPassword = ""
