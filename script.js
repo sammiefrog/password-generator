@@ -24,7 +24,7 @@ function generatePassword() {
   //what is wanted in the final password
   var passCriteria = [];
 
-  //number of characters wanted
+  //number of characters wanted needs to be gathered correctly first, then the other critera
   if (passLength >= 8 && passLength <= 128) {
     passLengthValue = parseInt(passLength);
     
@@ -32,6 +32,9 @@ function generatePassword() {
     var upperCase = confirm("Do you want to include uppercase letters?");
     var numberCase = confirm("Do you want to include numbers?");
     var specialChar = confirm("Do you want to include special characters?");
+  }
+  else if (NaN) {
+    alert("Please enter a valid number between 8 and 128!");
   }
   else {
     alert("Please enter a valid number between 8 and 128!");
