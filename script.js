@@ -1,6 +1,6 @@
 
 
-// variables
+// the generate button on the html
 var generateBtn = document.querySelector("#generate");
 var lowerCaseValue;
 var upperCaseValue;
@@ -33,12 +33,15 @@ function generatePassword() {
     var numberCase = confirm("Do you want to include numbers?");
     var specialChar = confirm("Do you want to include special characters?");
   }
-  else if (NaN) {
-    alert("Please enter a valid number between 8 and 128!");
+  else if (NaN == true) {
+    alert("That's not a valid number, please start again!");
+  }
+  else if (lowerCase === false && uppercase === false && numberCase === false && specialCar === false) {
+    alert("You didn't select any password criteria, please start again!")
   }
   else {
-    alert("Please enter a valid number between 8 and 128!");
-  }
+    alert("That number is too high or too low! Please try again!");
+  } 
 
   //if lowercase letters are wanted this then pushes them into the password criteria
     if (lowerCase===true) {
