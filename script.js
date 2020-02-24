@@ -2,11 +2,11 @@
 
 // the generate button on the html
 var generateBtn = document.querySelector("#generate");
-var lowerCaseValue;
-var upperCaseValue;
-var numberCaseValue;
-var specialCharValue;
-var passLengthValue;
+// var lowerCaseValue;
+// var upperCaseValue;
+// var numberCaseValue;
+// var specialCharValue;
+// var passLengthValue;
 
 //writes the password into the text box on browser
 function writePassword() {
@@ -33,15 +33,11 @@ function generatePassword() {
     var numberCase = confirm("Do you want to include numbers?");
     var specialChar = confirm("Do you want to include special characters?");
   }
-  else if (NaN == true) {
-    alert("That's not a valid number, please start again!");
-  }
-  else if (lowerCase === false && uppercase === false && numberCase === false && specialCar === false) {
-    alert("You didn't select any password criteria, please start again!")
-  }
   else {
-    alert("That number is too high or too low! Please try again!");
+    alert("That's not a valid number, please try again!");
+    return generatePassword();
   } 
+
 
   //if lowercase letters are wanted this then pushes them into the password criteria
     if (lowerCase===true) {
@@ -77,6 +73,12 @@ function generatePassword() {
       for (i = 0; i < specialCharValue.length; i++) {
         passCriteria.push(specialCharValue[i]);
       }
+    }
+
+  //if the user hits cancel on all criteria they will be prompted to start again
+    if (upperCase !== true && lowerCase !== true && numberCase !== true && specialChar !== true) {
+      alert("You did not choose any character types! Please try again.");
+      return generatePassword();
     }
 
     //Randomly takes values from the password criteria and add it to the new password
