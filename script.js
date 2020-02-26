@@ -2,11 +2,11 @@
 
 // the generate button on the html
 var generateBtn = document.querySelector("#generate");
-// var lowerCaseValue;
-// var upperCaseValue;
-// var numberCaseValue;
-// var specialCharValue;
-// var passLengthValue;
+var lowerCaseValue;
+var upperCaseValue;
+var numberCaseValue;
+var specialCharValue;
+var passLengthValue;
 
 //writes the password into the text box on browser
 function writePassword() {
@@ -38,12 +38,11 @@ function generatePassword() {
     return generatePassword();
   } 
 
-
   //if lowercase letters are wanted this then pushes them into the password criteria
     if (lowerCase===true) {
       lowerCaseValue = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
-        for (i = 0; i < lowerCaseValue.length; i++) {
+        for (var i = 0; i < lowerCaseValue.length; i++) {
           passCriteria.push(lowerCaseValue[i]);
         }
     }
@@ -52,7 +51,7 @@ function generatePassword() {
     if (upperCase===true) {
       upperCaseValue = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 
-        for (i = 0; i < upperCaseValue.length; i++) {
+        for (var i = 0; i < upperCaseValue.length; i++) {
           passCriteria.push(upperCaseValue[i]);
       }
     }
@@ -61,7 +60,7 @@ function generatePassword() {
     if (numberCase===true) {
       numberCaseValue = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 
-      for (i = 0; i < numberCaseValue.length; i++) {
+      for (var i = 0; i < numberCaseValue.length; i++) {
         passCriteria.push(numberCaseValue[i]);
       }
     }
@@ -70,7 +69,7 @@ function generatePassword() {
     if (specialChar===true) {
       specialCharValue = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "-", "+", "=", "{", "[", "}", "]", ":", ";", "'", "<", ">", "?", "/", "`", "~"];
 
-      for (i = 0; i < specialCharValue.length; i++) {
+      for (var i = 0; i < specialCharValue.length; i++) {
         passCriteria.push(specialCharValue[i]);
       }
     }
